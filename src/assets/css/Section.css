@@ -1,0 +1,23 @@
+.section-title{
+    display: flex;
+    align-items: flex-end;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.section-title > p{
+    font-size: 20px;
+    margin-left: 7px;
+    
+}
+
+.section-title > img{
+    width: 30px;
+}
+
+.section-items{
+    display: flex;
+    padding-top: 20px;
+
+}

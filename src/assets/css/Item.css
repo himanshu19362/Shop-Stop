@@ -1,0 +1,46 @@
+.item {
+    width: 200px ;
+    /* height: 200px; */
+    background-color: #fbfbfb;
+    /* border: rgb(235 , 235 , 235); */
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    padding: 25px 15px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 600;
+    
+}
+
+.item-image{
+    text-align: center;
+    /* margin-top: 15px; */
+}
+
+.item-image > img{
+    width: 140px;
+    /* width: 100%; */
+    object-fit: contain;
+    border-radius: 5px;    
+}
+
+.item-info{
+    margin-top: 15px;
+}
+
+.item-info > p{
+    margin-bottom: 5px;
+}
+
+.add-button{
+    background-color: #e03546;
+    color: #fff;
+    border: none;
+    /* font-family: 'Nunito Sans', sans-serif; */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    padding: 5px 8px;
+    font-weight: 500;
+    border-radius: 4px;
+    font-size: 13px;
+}
