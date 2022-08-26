@@ -1,7 +1,15 @@
 .header{
-    background-color: black;    
+    background-color: #f4f4f4;    
     color: white;
     padding: 8px 20px;    
+    border-bottom: 1px solid lightgray;
+    color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+
 }
 
 .header > .container{
@@ -36,7 +44,7 @@
 .header-center > input{
     width: 80%;
     border-radius: 20px 20px 20px 20px;
-    border: none;
+    border: 1px solid lightgray;
     outline: none;
     padding: 5px 20px;
     height: 70%;
@@ -67,12 +75,12 @@
 
 .first-line{
     font-size: 12px;
-    color: #f4f4f4;
+    color: rgba(0 , 0 , 0 , 0.7);
 }
 
 .second-line{
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 800;
 }
 
 .header-right > div {

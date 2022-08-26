@@ -1,6 +1,8 @@
 import React from 'react'
 import '../assets/css/Home.css'
-import carrot from '../assets/images/carrot.png'
+import vegetables from '../assets/images/vegetable.png'
+import dairy from '../assets/images/dairy.png'
+import grocery from '../assets/images/grocery.png'
 import Section from './Section'
 
 const Home = () => {
@@ -14,11 +16,10 @@ const Home = () => {
                 </div>
             </div>
             <div className='main'>
-                <Section sectionImage={carrot} sectionTitle={'Fruits And Vegetables'} />
-                
-                
+                <Section sectionImage={vegetables} sectionTitle={'Fruits And Vegetables'} />
+                <Section sectionImage={dairy} sectionTitle={'Dairy'} />
+                <Section sectionImage={grocery} sectionTitle={'Groceries'} />               
             </div>
-
         </div>
         
     </div>
