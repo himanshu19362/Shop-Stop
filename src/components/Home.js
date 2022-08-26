@@ -16,6 +16,7 @@ const Home = () => {
             <div className='main'>
                 <Section sectionImage={carrot} sectionTitle={'Fruits And Vegetables'} />
                 
+                
             </div>
 
         </div>

@@ -1,12 +1,13 @@
 import React from 'react'
 import '../assets/css/Item.css'
-import onion from '../assets/images/onion.jpg'
 
-const Item = () => {
+
+
+const Item = ({image}) => {
   return (
     <div className='item'>
         <div className='item-image'>
-            <img src={onion} />
+            <img src={image} alt={" "} />
         </div>
         <div className='item-info'>
           <p>Onions (1 Kg)</p>

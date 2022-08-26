@@ -19,5 +19,29 @@
 .section-items{
     display: flex;
     padding-top: 20px;
+    overflow-x: hidden;
+    margin: 0 50px;
+}
 
+.wrapper{
+    position: relative;
+}
+
+.wrapper > button{
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;    
+    border-radius: 100%;    
+    border: none;
+    padding: 5px;
+    background-color: #e03546;
+    color: #fff;    
+}
+
+.left-arrow {
+    left: 5px;
+}
+
+.right-arrow {
+    right: 5px;
 }
