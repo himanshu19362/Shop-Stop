@@ -19,10 +19,16 @@
     height: 55px;
 }
 
-.header-left > p{
+.title {
     font-family: 'DynaPuff', cursive;
     font-size: 28px;
+    color: black;
 }
+
+a{
+    text-decoration: none;
+}
+
 
 .header-right{
     display: flex;
@@ -81,11 +87,16 @@
 .second-line{
     font-size: 14px;
     font-weight: 800;
+    color: black;
 }
 
 .header-right > div {
     padding: 0 15px;
+    /* text-decoration: none; */
+    
 }
+
+
 
 .cart-count {
     display: flex;
@@ -96,6 +107,7 @@
     font-size: 16px;
     margin-left: 8px;
 }
+
 
 @media (max-width : 1200px){
     .header-center {

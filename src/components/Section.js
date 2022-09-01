@@ -6,7 +6,7 @@ import onion from "../assets/images/onion.jpg";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
-const Section = ({ sectionImage, sectionTitle }) => {
+const Section = ({ sectionImage, sectionTitle , items }) => {
   const ref = useRef(null)
   const scrollRight = () => {    
     let amountScrolled = 0;
@@ -47,7 +47,7 @@ const Section = ({ sectionImage, sectionTitle }) => {
       </div>
       <div className="wrapper">
         <div className="section-items" ref={ref}>
-          <Item image={onion} />
+          {/* <Item image={onion} />
           <Item image={cabbage} />
           <Item image={onion} />
           <Item image={onion} />
@@ -62,7 +62,8 @@ const Section = ({ sectionImage, sectionTitle }) => {
           <Item image={onion} />
           <Item image={cabbage} />
           <Item image={onion} />
-          <Item image={onion} />
+          <Item image={onion} /> */}
+          {items.map(item => <Item image={item.url} price={item.price} name={item.name}/>)}
         </div>
         <button onClick={scrollLeft} className={"left-arrow"}>
           <ChevronLeftIcon />

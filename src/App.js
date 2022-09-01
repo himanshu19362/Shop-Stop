@@ -2,11 +2,33 @@ import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import Home from './components/Home';
-import { BrowserRouter as Router , Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router , Routes, Route } from "react-router-dom";
 import Login from './components/Login';
-
+import { useEffect } from 'react';
+import { auth } from './firebase';
+import { useStateValue } from './ReactContextApi/StateProvider';
+import { actionTypes } from './ReactContextApi/actionTypes';
 
 function App() {
+  
+  const [ , dispatch] = useStateValue()
+  useEffect(()=>{
+    auth.onAuthStateChanged(authUser => {      
+      if(auth){
+        console.log(authUser)
+        dispatch({
+          type: actionTypes.SET_USER , 
+          user : authUser
+        })
+      }
+      else{
+        dispatch({
+          type: actionTypes.SET_USER , 
+          user: null
+        })
+      }
+    })
+  } , [])
   return (
     <div className="App">
       <Router>

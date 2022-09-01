@@ -68,7 +68,7 @@
 .terms {
     color: rgb(122, 121, 121);
     font-size: 15px;
-    /* margin-bottom: 7px; */
+    
 }
 
 .new-account {
@@ -80,4 +80,8 @@
     padding: 5px;
     font-size: 15px;
     border-radius: 5px 5px 5px 5px;
+}
+
+hr{
+    margin: 20px 0;
 }
