@@ -8,6 +8,7 @@ import { useEffect } from 'react';
 import { auth } from './firebase';
 import { useStateValue } from './ReactContextApi/StateProvider';
 import { actionTypes } from './ReactContextApi/actionTypes';
+import Cart from './components/Cart';
 
 function App() {
   
@@ -34,13 +35,12 @@ function App() {
       <Router>
         <Header />
 
-        <Routes>
+        <Routes >
           <Route path='/' element={[<Home />]}/>
           <Route path='/login' element={[<Login />]}/>
+          <Route path='/cart' element={[<Cart />]}/>
 
-        </Routes> 
-        {/* <Home /> */}
-        
+        </Routes>        
         <Footer />
       </Router>
     </div>

@@ -5,9 +5,11 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { useStateValue } from '../ReactContextApi/StateProvider';
 import { auth } from '../firebase';
 import { Link } from 'react-router-dom';
+import { getTotalItems } from '../ReactContextApi/reducer';
+
 const Header = () => {
   
-  const [{ user } , ] = useStateValue()
+  const [{ user , cart} , ] = useStateValue()
   const handleSignOut = () => {
     if(user){
         auth.signOut()
@@ -34,10 +36,12 @@ const Header = () => {
                     <p className='first-line'>View</p>
                     <p className='second-line'>Order History</p>
                 </div>
-                <div className='cart-count'>
-                    <AddShoppingCartIcon />
-                    <p className='second-line'>0</p>
-                </div>
+                <Link to={'/cart'} >
+                    <div className='cart-count'>
+                        <AddShoppingCartIcon />
+                        <p className='second-line'>{getTotalItems(cart)}</p>
+                    </div>
+                </Link>
             </div>
         </div>
         

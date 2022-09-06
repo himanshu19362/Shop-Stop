@@ -1,0 +1,73 @@
+.cart-item{
+    display: flex;
+    border-bottom: 2px solid lightgrey;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.cart-item-image{
+    width: 100px;
+}
+
+.item-price{
+    width: 60px;
+}
+
+.item-detail{
+    flex-grow: 1;
+    /* color: grey; */
+    font-family: 'Nunito Sans', sans-serif;
+    padding-left: 20px;
+    
+}
+
+.cart-item-image > img {
+    display: block;
+    width: 60%;
+}
+
+.button-container{
+    display: flex;
+}
+
+.button-counter{
+    display: flex;    
+    border: 1px solid black;
+    align-items: center;
+    margin-top: 5px; 
+    border-radius: 6px;  
+}
+
+.button-counter > p{
+    width: 40px;
+    text-align: center;
+}
+
+.button-counter > button{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    /* border-radius: 100%; */
+    /* border: none; */
+    /* margin: 3px 3px; */
+}
+
+.button-counter > button > svg{
+    width: 10px;
+    height: 10px;
+}
+
+.minus{
+    border-radius: 6px 0 0 6px;
+    border: none;
+    border-right: 1px solid black;
+}
+
+
+.plus{
+    border-radius: 0 6px 6px 0;
+    border: none;
+    border-left: 1px solid black;
+}
+

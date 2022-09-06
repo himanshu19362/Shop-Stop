@@ -34,7 +34,7 @@ const Home = () => {
     getData()
   } , [])
 
-  console.log(vegData)
+  
   
   return (
     <div className='home'>

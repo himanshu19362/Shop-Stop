@@ -1,8 +1,6 @@
 import React , { useRef } from "react";
 import "../assets/css/Section.css";
 import Item from "./Item";
-import cabbage from "../assets/images/cabbage.jfif";
-import onion from "../assets/images/onion.jpg";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 
@@ -46,24 +44,8 @@ const Section = ({ sectionImage, sectionTitle , items }) => {
         <p>{sectionTitle}</p>
       </div>
       <div className="wrapper">
-        <div className="section-items" ref={ref}>
-          {/* <Item image={onion} />
-          <Item image={cabbage} />
-          <Item image={onion} />
-          <Item image={onion} />
-          <Item image={onion} />
-          <Item image={cabbage} />
-          <Item image={onion} />
-          <Item image={onion} />
-          <Item image={onion} />
-          <Item image={cabbage} />
-          <Item image={onion} />
-          <Item image={onion} />
-          <Item image={onion} />
-          <Item image={cabbage} />
-          <Item image={onion} />
-          <Item image={onion} /> */}
-          {items.map(item => <Item image={item.url} price={item.price} name={item.name}/>)}
+        <div className="section-items" ref={ref}>          
+          {items.map(item => <Item url={item.url} price={item.price} name={item.name} id={item.id} key={item.id}/>)}
         </div>
         <button onClick={scrollLeft} className={"left-arrow"}>
           <ChevronLeftIcon />
