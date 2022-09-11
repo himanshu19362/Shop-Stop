@@ -1,0 +1,60 @@
+.payment{
+    margin-top: 100px;
+    padding: 0 20px;
+}
+
+.payment > .container > .payment-left > .item-list{
+    border: 1px solid lightgrey;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+.payment-section{
+    /* border: 1px solid lightgrey; */
+    border-radius: 10px;
+    /* margin-top: 15px; */
+    width: 350px;
+    margin-left: 20px;
+}
+
+.payment > .container{
+    display: flex;
+}
+
+
+
+.payment-left{
+    flex-grow: 1;
+}
+
+.payment-form {
+    border: 1px solid lightgrey;
+    /* height: 20vh; */
+    margin-top: 15px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.payment-form > h3{
+    text-align: center;
+    border-bottom: 1px solid grey;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+.payment-form > p{
+    margin-bottom: 10px;
+    /* font-family: 'Nunito Sans', sans-serif; */
+    letter-spacing: 0.7px;
+    font-size: 1.1rem;
+    /* color: pink; */
+}
+
+.payment-form > form > button{
+    margin-top: 10px ;
+}
+
+.payment-form > form > p{
+    color: red;
+    font-size: 12px;
+}

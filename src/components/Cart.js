@@ -4,8 +4,9 @@ import { useStateValue } from '../ReactContextApi/StateProvider'
 import CartItem from './CartItem'
 import truck from '../assets/images/truck.jpg'
 import { getTotalItems, getTotalPrice } from '../ReactContextApi/reducer'
+import { Link } from 'react-router-dom'
 const Cart = () => {
-  const [{cart} , ] = useStateValue()
+  const [{cart , user} , ] = useStateValue()
   return (
     <div className='cart'>
         <div className='container'>
@@ -17,8 +18,8 @@ const Cart = () => {
                         <p>Your order will be delivered by 26th January 2022</p>
                     </div>
                     <div className='item-list'>
-                        {cart.map(item => <CartItem price={item.price} name={item.name} id={item.id} url={item.url} />)}
-                        {/* <CartItem /> */}
+                        {cart.map(item => <CartItem price={item.price} name={item.name} id={item.id} url={item.url} visible={true} key={item.id + 2}/>)}
+                        
                     </div>
                 </div>
                 <div className='checkout'>
@@ -38,7 +39,7 @@ const Cart = () => {
                         <p>₹{getTotalPrice(cart)*1.05}</p>
                     </div>
                     <div className='checkout-button'>
-                        <button>Checkout</button>
+                        <Link to={user ? '/payment' : '/login'}><button>Pay Now</button></Link>
                     </div>
 
                 </div>

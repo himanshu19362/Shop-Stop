@@ -5,7 +5,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { useStateValue } from '../ReactContextApi/StateProvider';
 import { actionTypes } from '../ReactContextApi/actionTypes';
 
-const CartItem = ({name , price , url , id}) => {
+const CartItem = ({name , price , url , id , qty, visible}) => {
   const [quantity , setQuantity] = useState(1);
   const [ , dispatch] = useStateValue()
   const increment = ()=>{
@@ -42,7 +42,8 @@ const CartItem = ({name , price , url , id}) => {
           <div className='item-detail'>
             <p>{name}</p>
             <p>₹ {price}</p>
-            <div className='button-container'>
+            {!visible && <p>Quantity : {qty}x</p>}
+            <div className='button-container' style={!visible ? {'display' : 'none'} : {}}>
               <div className='button-counter'>
                 <button className='minus' onClick={decrement}><RemoveIcon /></button>
                 <p>{quantity}</p>

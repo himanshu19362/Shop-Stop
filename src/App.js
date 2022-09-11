@@ -9,9 +9,14 @@ import { auth } from './firebase';
 import { useStateValue } from './ReactContextApi/StateProvider';
 import { actionTypes } from './ReactContextApi/actionTypes';
 import Cart from './components/Cart';
+import Payment from './components/Payment';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import Orders from './components/Orders';
+
 
 function App() {
-  
+  const promise = loadStripe('pk_test_51LVnLDSC4edHBmxLMenhDp3jZ5acKw4BYvKaBr9QZpwsYnDI4RoWbPT3zftUjtu04k0QWLfZR6DpEnSPl2CpgdUq00IqRDHqvR')
   const [ , dispatch] = useStateValue()
   useEffect(()=>{
     auth.onAuthStateChanged(authUser => {      
@@ -39,6 +44,8 @@ function App() {
           <Route path='/' element={[<Home />]}/>
           <Route path='/login' element={[<Login />]}/>
           <Route path='/cart' element={[<Cart />]}/>
+          <Route path='/payment' element={[<Elements stripe={promise}><Payment /></Elements>]}/>
+          <Route path='/orders' element={[<Orders />]}/>
 
         </Routes>        
         <Footer />
