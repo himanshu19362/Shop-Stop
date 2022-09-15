@@ -6,20 +6,19 @@ import { useStateValue } from '../ReactContextApi/StateProvider';
 import { actionTypes } from '../ReactContextApi/actionTypes';
 
 const CartItem = ({name , price , url , id , qty, visible}) => {
-  const [quantity , setQuantity] = useState(1);
+  // const [quantity , setQuantity] = useState(qty);
   const [ , dispatch] = useStateValue()
-  const increment = ()=>{
-    
+  const increment = ()=>{    
       dispatch({
         type: actionTypes.SET_QUANTITY , 
         id: id , 
-        quantity : quantity+1
+        quantity : qty+1
       })
-      setQuantity(quantity + 1);      
+      // setQuantity(quantity + 1);      
   }
 
   const decrement = ()=>{
-    if(quantity === 1){
+    if(qty === 1){
       dispatch({
         type: actionTypes.REMOVE_FROM_CART , 
         id: id
@@ -29,9 +28,9 @@ const CartItem = ({name , price , url , id , qty, visible}) => {
     dispatch({
       type:actionTypes.SET_QUANTITY , 
       id:id , 
-      quantity:quantity-1
+      quantity:qty-1
     })
-    setQuantity(quantity-1)    
+        
   }
   return (
     <>
@@ -46,13 +45,13 @@ const CartItem = ({name , price , url , id , qty, visible}) => {
             <div className='button-container' style={!visible ? {'display' : 'none'} : {}}>
               <div className='button-counter'>
                 <button className='minus' onClick={decrement}><RemoveIcon /></button>
-                <p>{quantity}</p>
+                <p>{qty}</p>
                 <button className='plus' onClick={increment}><AddIcon /></button>
               </div>
             </div>          
           </div>        
           <div className='item-price'>
-            <p>₹ {price*quantity}</p>
+            <p>₹ {price*qty}</p>
           </div>
       </div>
     </>

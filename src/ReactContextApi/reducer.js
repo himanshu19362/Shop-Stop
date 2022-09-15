@@ -31,7 +31,7 @@ export const reducer = (state , action) => {
         case actionTypes.ADD_TO_CART:            
             return {
                 ...state , 
-                cart : [...state.cart , action.item]
+                cart : [...state.cart , action.item]                 
             }
         case actionTypes.REMOVE_FROM_CART:
             return {

@@ -45,7 +45,7 @@ const Section = ({ sectionImage, sectionTitle , items }) => {
       </div>
       <div className="wrapper">
         <div className="section-items" ref={ref}>          
-          {items.map(item => <Item url={item.url} price={item.price} name={item.name} id={item.id} key={item.id}/>)}
+          {items.map(item => <Item url={item.url} price={item.price} name={item.name} id={item.id} key={item.id} />)}
         </div>
         <button onClick={scrollLeft} className={"left-arrow"}>
           <ChevronLeftIcon />

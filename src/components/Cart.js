@@ -18,7 +18,7 @@ const Cart = () => {
                         <p>Your order will be delivered by 26th January 2022</p>
                     </div>
                     <div className='item-list'>
-                        {cart.map(item => <CartItem price={item.price} name={item.name} id={item.id} url={item.url} visible={true} key={item.id + 2}/>)}
+                        {cart.map(item => <CartItem price={item.price} name={item.name} id={item.id} url={item.url} visible={true} key={item.id + 2} qty={item.quantity}/>)}
                         
                     </div>
                 </div>
