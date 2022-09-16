@@ -1,0 +1,23 @@
+.order{
+    border: 1px solid lightgrey;
+    /* padding: 5px; */
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.order-title{
+    background-color: rgb(242, 248, 253);
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 10px 10px 0 0 ;
+    border-bottom: grey 1px solid;
+}
+
+.order-list{
+    padding: 10px;
+}
+
+.order-list > p{
+    text-align: right;
+    padding-right: 15px;
+}

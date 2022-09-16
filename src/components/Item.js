@@ -73,9 +73,7 @@ const decrement = ()=>{
                 <p style={{'fontWeight' : '100'}}>{quantity}</p>
                 <button className='plus' onClick={increment}><AddIcon /></button>
               </div>
-            </div>  
-            
-            
+            </div>            
             }            
           </div>  
         </div>
@@ -86,3 +84,4 @@ const decrement = ()=>{
 export default Item
 
 // 'https://him-image-api.herokuapp.com/'
+

@@ -6,6 +6,9 @@ import grocery from '../assets/images/grocery.png'
 import Section from './Section'
 import axios from '../axios'
 
+
+
+
 const Home = () => {
   const [vegData , setVegData] = useState([])
   const [dairyData , setDairyData] = useState([])

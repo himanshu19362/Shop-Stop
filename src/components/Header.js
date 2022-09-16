@@ -33,8 +33,10 @@ const Header = () => {
                     </div>
                 </Link>
                 <div className='order-history'>
-                    <p className='first-line'>View</p>
-                    <p className='second-line'>Order History</p>
+                    <Link to={user ? '/orders' : '/'}>
+                        <p className='first-line'>View</p>
+                        <p className='second-line'>Order History</p>
+                    </Link>
                 </div>
                 <Link to={'/cart'} >
                     <div className='cart-count'>
