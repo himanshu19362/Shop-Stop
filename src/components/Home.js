@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import '../assets/css/Home.css'
 import vegetables from '../assets/images/vegetable.png'
 import dairy from '../assets/images/dairy.png'

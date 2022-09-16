@@ -33,3 +33,19 @@
 img {
     width: 40px;
 }
+
+
+@media (max-width : 800px){
+    .banner p:nth-child(1){
+        font-size: 30px;
+        /* font-weight: 500;
+        margin-bottom: 7px;     */
+    }
+
+    .banner p:nth-child(2){
+        font-size: 15px;    
+        color: lightgray;
+    }
+    
+
+}

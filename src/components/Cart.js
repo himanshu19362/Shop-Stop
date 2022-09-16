@@ -10,10 +10,7 @@ const Cart = () => {
   const [{ cart , user } , ] = useStateValue();
   const currDate = new Date();
   const futureDate = new Date(currDate)
-  futureDate.setDate(futureDate.getDate() + 5)
-  
-//   console.log(futureDate.getDate())
-  
+  futureDate.setDate(futureDate.getDate() + 5) 
   return (
     <div className='cart'>
         <div className='container'>
@@ -21,14 +18,14 @@ const Cart = () => {
             <div className='cart-page'>
                 <div className='cart-items'>
                     <div className='cart-title'>  
-                        <img src={truck} />                      
+                        <img src={truck} alt={'truck'}/>                      
                         <p>{cart.length === 0 ? 'Cart is Empty' : getTotalPrice(cart) < 250 ? 'Add More Items to Cart' : `Your order will be delivered by ${futureDate.getDate()}/${futureDate.getMonth()}/${futureDate.getFullYear()}`}</p>
                     </div>
                     <div className='item-list'>
                         {cart.map(item => <CartItem price={item.price} name={item.name} id={item.id} url={item.url} visible={true} key={item.id + 2} qty={item.quantity}/>)}                        
                     </div>
                     {cart.length === 0 && <div className='empty-cart'>
-                            <img  src={ECart}/>
+                            <img src={ECart} alt={'empty cart'}/>
                         </div>
                     }
                 </div>

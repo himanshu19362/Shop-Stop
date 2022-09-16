@@ -16,7 +16,7 @@ const Section = ({ sectionImage, sectionTitle , items }) => {
       const newLeft = ref.current.scrollLeft
       amountScrolled += (newLeft - currLeft)
     
-      if(currLeft === newLeft || amountScrolled === 800){
+      if(currLeft === newLeft || amountScrolled ===  (window.innerWidth < 700 ? 300 : 800)){
         clearInterval(timer)
       }
     } , 8)    
@@ -31,7 +31,7 @@ const Section = ({ sectionImage, sectionTitle , items }) => {
       ref.current.scrollLeft -= 10
       const newLeft = ref.current.scrollLeft
       amountScrolled += (currLeft - newLeft)
-      if(newLeft === 0 || amountScrolled === 800){
+      if(newLeft === 0 || amountScrolled === (window.innerWidth < 700 ? 300 : 800)){
         clearInterval(timer)
       }
     } , 8)

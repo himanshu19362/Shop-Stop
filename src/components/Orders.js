@@ -27,7 +27,6 @@ const Orders = () => {
       setOrders([]);
     }
   }, []);
-  // console.log(orders)
   
   return (
     <div className="orders">
