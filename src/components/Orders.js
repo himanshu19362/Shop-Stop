@@ -32,7 +32,7 @@ const Orders = () => {
     <div className="orders">
       <div className="container">
         <h2>Order History</h2>
-        {orders.length > 0 && orders.map(order => <Order data={order?.data?.cart} date={order?.data?.created} total={order?.data?.amount}/>)}
+        {orders.length > 0 && orders.map(order => <Order data={order?.data?.cart} date={order?.data?.created} total={order?.data?.amount} key={order?.id} id={order?.id}/>)}
       </div>
     </div>
   );
