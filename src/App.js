@@ -13,11 +13,17 @@ import Payment from './components/Payment';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import Orders from './components/Orders';
-
+import { useState } from 'react';
+import axios from './axios'
 
 function App() {
   const promise = loadStripe('pk_test_51LVnLDSC4edHBmxLMenhDp3jZ5acKw4BYvKaBr9QZpwsYnDI4RoWbPT3zftUjtu04k0QWLfZR6DpEnSPl2CpgdUq00IqRDHqvR')
   const [ , dispatch] = useStateValue()
+
+  const [vegData , setVegData] = useState([])
+  const [dairyData , setDairyData] = useState([])
+  const [groceryData , setGroceryData] = useState([])
+
   useEffect(()=>{
     auth.onAuthStateChanged(authUser => {      
       if(auth){
@@ -34,6 +40,29 @@ function App() {
         })
       }
     })
+
+
+    const getData = async ()=> {
+      const veg = await axios({
+          method: 'GET' , 
+          url: '/veg'
+      })
+      setVegData(veg.data)
+
+      const dairy = await axios({
+          method: 'GET' , 
+          url: '/dairy'
+      })
+      setDairyData(dairy.data)
+      
+      const grocery = await axios({
+          method: 'GET' , 
+          url: '/grocery'
+      })
+      setGroceryData(grocery.data)        
+  }
+
+  getData()
   } , [])
   return (
     <div className="App">
@@ -41,7 +70,7 @@ function App() {
         <Header />
 
         <Routes >
-          <Route path='/' element={[<Home />]}/>
+          <Route path='/' element={[<Home vegData={vegData} dairyData={dairyData} groceryData={groceryData}/>]}/>
           <Route path='/login' element={[<Login />]}/>
           <Route path='/cart' element={[<Cart />]}/>
           <Route path='/payment' element={[<Elements stripe={promise}><Payment /></Elements>]}/>
