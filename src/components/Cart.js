@@ -5,6 +5,7 @@ import CartItem from './CartItem'
 import truck from '../assets/images/truck.jpg'
 import { getTotalItems, getTotalPrice } from '../ReactContextApi/reducer'
 import { Link } from 'react-router-dom'
+import ECart from '../assets/images/emptycart.jpg'
 const Cart = () => {
   const [{ cart , user } , ] = useStateValue();
   const currDate = new Date();
@@ -21,12 +22,15 @@ const Cart = () => {
                 <div className='cart-items'>
                     <div className='cart-title'>  
                         <img src={truck} />                      
-                        <p>Your order will be delivered by {futureDate.getDate()}/{futureDate.getMonth()}/{futureDate.getFullYear()}</p>
+                        <p>{cart.length === 0 ? 'Cart is Empty' : getTotalPrice(cart) < 250 ? 'Add More Items to Cart' : `Your order will be delivered by ${futureDate.getDate()}/${futureDate.getMonth()}/${futureDate.getFullYear()}`}</p>
                     </div>
                     <div className='item-list'>
-                        {cart.map(item => <CartItem price={item.price} name={item.name} id={item.id} url={item.url} visible={true} key={item.id + 2} qty={item.quantity}/>)}
-                        
+                        {cart.map(item => <CartItem price={item.price} name={item.name} id={item.id} url={item.url} visible={true} key={item.id + 2} qty={item.quantity}/>)}                        
                     </div>
+                    {cart.length === 0 && <div className='empty-cart'>
+                            <img  src={ECart}/>
+                        </div>
+                    }
                 </div>
                 <div className='checkout'>
                     <div className='checkout-title'>

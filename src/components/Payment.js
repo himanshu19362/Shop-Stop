@@ -74,6 +74,7 @@ const Payment = () => {
             <div className='payment-left'>
                 <h2>Summary</h2>            
                 <div className='item-list'>
+                    {cart.length === 0 && <h3>Cart Is Empty</h3>}
                     {cart.map(item => <CartItem price={item.price} name={item.name} id={item.id} url={item.url} visible={false} qty={item.quantity} key={item.id + 1}/>)}                        
                 </div>
             </div>                        
@@ -84,7 +85,7 @@ const Payment = () => {
                     <p><strong>Total : ₹</strong> {getTotalPrice(cart)*1.05}</p>
                     <form onSubmit={handlePayment} >
                         <CardElement onChange={handleChange} />
-                        <button disabled={processing || disabled || succeeded} type={'submit'}>{processing ? 'Processing' : 'Buy Now' }</button>
+                        <button disabled={processing || disabled || succeeded || getTotalPrice(cart)*1.05 < 250} type={'submit'}>{processing ? 'Processing' : 'Buy Now' }</button>
                         {error && <p>{error}</p>}
                     </form>
                 </div>

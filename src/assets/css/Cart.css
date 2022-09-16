@@ -102,3 +102,15 @@
     color: #fff;
     font-weight: 600;
 }
+
+.empty-cart{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.empty-cart > img{
+    width: 300px;
+    object-fit: cover;
+    
+}
