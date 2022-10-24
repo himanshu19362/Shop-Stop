@@ -4,7 +4,7 @@ This is a E commerce website for ordering groceries created using ReactJS.
 
 ## Youtube 
 
-[https://www.youtube.com/watch?v=ExYoLT8dL5o](Link) to Youtube Video
+[Link](https://www.youtube.com/watch?v=ExYoLT8dL5o) to Youtube Video
 
 ## Installation
 
